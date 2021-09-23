@@ -2,7 +2,7 @@ import os
 
 class Config:
     #debug = True
-    SECRET_KEY = 'gaidi'
+    SECRET_KEY = 'certifiedgirltoto'
     
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
@@ -13,7 +13,14 @@ class Config:
     MAIL_USE_SSL = True
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
+    SENDER_EMAIL = 'kingoriteresia@gmail.com'
     UPLOADED_PHOTOS_DEST = 'app/static/photos'
+    
+    
+    
+    # simple mde  configurations
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
     
     @staticmethod
     def init_app(app):
@@ -35,7 +42,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/pitch'  
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/blog'  
     
 class DevConfig(Config):
     '''
@@ -43,7 +50,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/pitch'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/blog'
     DEBUG = True  
     
     
