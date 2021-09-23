@@ -15,6 +15,16 @@ class Quote:
         self.id=id
         self.quote=quote
         
+class Category(db.Model):
+    __tablename__ = 'categories'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255))
+    my_date = db.Column(db.DateTime, default=datetime.utcnow)
+    posts = db.relationship('Post', backref='category', lazy='dynamic')
+
+    def __repr__(self):
+        return f'Category {self.name}'        
+        
 
 
 class User(UserMixin,db.Model):
