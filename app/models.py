@@ -5,6 +5,17 @@ from werkzeug import generate_password_hash,check_password_hash
 from datetime import datetime
 
 
+class Quote:
+    """
+    New class to define the class quote
+    """
+    def __init__(self,id,quote):
+        
+        self.id=id
+        self.quote=quote
+        
+
+
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
 
