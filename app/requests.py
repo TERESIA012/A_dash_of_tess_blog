@@ -28,6 +28,8 @@ def get_quote():
     
     
     
+    
+    
         
         
                           
