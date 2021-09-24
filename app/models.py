@@ -124,6 +124,31 @@ class Subscriber(db.Model):
 
     def __repr__(self):
         return f'Subscriber {self.email}'
+    
+    
+    
+class Upvote(db.Model):
+    __tablename__ = 'upvotes'
+    id = db.Column(db.Integer, primary_key = True)
+    upvote = db.Column(db.Integer)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    
+    def save_upvote(self):
+        db.session.add(self)
+        db.session.commit()
+    def delete_upvote(self):
+        db.session.delete(self)
+        db.session.commit()
+    def __repr__(self):
+        return f'Upvote: {self.upvote}'
+    
+class Downvote(db.Model):
+    __tablename__= 'downvotes'
+    id = db.Column(db.Integer, primary_key = True)
+    downvote = db.Column(db.Integer)
+    post_id = db.Column(db.Integer, db.ForeignKey('posts.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
          
     
     
