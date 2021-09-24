@@ -37,7 +37,7 @@ class User(UserMixin,db.Model):
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
     password_hash = db.Column(db.String(255))
-    # image_file = db.Column(db.String(255), nullable=False, default='default.jpg')
+    
     my_date = db.Column(db.DateTime,default=datetime.utcnow)
     posts = db.relationship('Post', backref ='user',lazy = "dynamic")
     comment = db.relationship('Comment', backref ='user', lazy ="dynamic")
@@ -67,6 +67,7 @@ class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String, nullable=False)
     my_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    image_file = db.Column(db.String(255), nullable=False, default='default.jpg')
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
