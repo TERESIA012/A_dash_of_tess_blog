@@ -7,3 +7,27 @@
 body{
     overflow-x: hidden;
 }
+
+nav{
+    background-color:black;
+}
+
+.home h1{
+    position:relative;
+    text-align: center;
+    color: #fff;
+    top: 20rem;
+    right: 10rem;
+    
+    
+}
+
+.home{
+    background-image:url('../photos/slide1.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:91vh;
+    opacity:0.8;
+    
+
+}
