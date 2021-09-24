@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+
+{% macro display_quotes(quotes)%}
+<div class="jumbotron">
+    <h1 class="">Welcome to My Blog</h1>
+    <h3 class="">{{quotes.quote}}</h3>
+    <h5>~ {{quotes.author}}</h5>
+</div>
+
+
+<style>
+    
+    body{
+    
+        background-image:url('../static/photos/slide1.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;
+        height:91vh;
+        opacity:0.7;
+        text-align:center;
+        color:#fff;
+    }
+
+    h3{
+        margin-top:27rem;
+    }
+
+    
+    </style>
+
+
+
+
+{%endmacro%}
+

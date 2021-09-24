@@ -19,7 +19,7 @@ def index():
     """
     View root page function that returns the index page and its data
     """
-    # quotes = get_quote()
+    quotes = get_quote()
     title="Welcome to my blog"
     
-    return render_template('index.html', title=title)
+    return render_template('index.html',title=title,quotes=quotes,current_user=current_user)
