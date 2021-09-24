@@ -35,10 +35,10 @@ def create_app(config_name):
     # Registering the blueprint
     csrf.init_app(app)
     simple.init_app(app)
-    # from .main import main as main_blueprint
-    # app.register_blueprint(main_blueprint)
-    # from .auth import auth as auth_blueprint
-    # app.register_blueprint(auth_blueprint,url_prefix = '/auth')
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint,url_prefix = '/auth')
     # setting config
     # from .requests import configure_request
     # configure_request(app)
