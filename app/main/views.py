@@ -4,7 +4,6 @@ from flask.helpers import flash
 from . import main
 from .forms import UpdateProfile
 from ..models import User
-# from flask_login import login_required
 from .. import db,photos
 from flask_login import login_required, current_user
 # import markdown2  
@@ -13,25 +12,22 @@ from ..models import Post, Comment, User, Upvote, Category,Quote,Subscriber
 
 
 @main.route('/')
-@main.route('/home')
+
 def index():
     
     """
     View root page function that returns the index page and its data
     """
+    
     quotes = get_quote()
     title="Welcome to my blog"
+    
+    
     
     return render_template('index.html',title=title,quotes=quotes,current_user=current_user)
 
 
-@main.route('/posts')
-@login_required
-def posts():
-    posts = Post.query.all()
-    likes = Upvote.query.all()
-    user = current_user
-    return render_template('blog.html', posts=posts, likes=likes, user=user)
+
 
 
 @main.route("/user/<uname>")
