@@ -2,9 +2,9 @@ from app.requests import get_quote
 from flask import render_template, request, redirect, url_for, abort
 from flask.helpers import flash
 from . import main
-# from .forms import UpdateProfile
+from .forms import UpdateProfile
 from ..models import User
-from flask_login import login_required
+# from flask_login import login_required
 from .. import db,photos
 from flask_login import login_required, current_user
 # import markdown2  
@@ -23,6 +23,15 @@ def index():
     title="Welcome to my blog"
     
     return render_template('index.html',title=title,quotes=quotes,current_user=current_user)
+
+
+@main.route('/posts')
+@login_required
+def posts():
+    posts = Post.query.all()
+    likes = Upvote.query.all()
+    user = current_user
+    return render_template('blog.html', posts=posts, likes=likes, user=user)
 
 
 @main.route("/user/<uname>")
@@ -66,3 +75,14 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile',uname=uname))
+
+
+@main.route('/user')
+@login_required
+def user():
+    username = current_user.username
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        return ('not found')
+    return render_template('profile.html', user=user)
+

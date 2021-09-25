@@ -1,8 +1,13 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
+from wtforms import StringField,TextAreaField,SubmitField,SelectField
 from wtforms.validators import Required, Email, Length, EqualTo
 from ..models import Post, Comment, Subscriber
 from wtforms import ValidationError
+
+
+class UpdateProfile(FlaskForm):
+    bio = TextAreaField('Tell us about you:',validators = [Required()])
+    submit = SubmitField('Submit')
 
 
 class CategoryForm(FlaskForm):
