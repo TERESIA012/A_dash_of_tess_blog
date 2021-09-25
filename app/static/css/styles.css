@@ -1,14 +1,6 @@
-.navbar-custom{
-    box-shadow: 2px 2px 2px;
-}
-.nav-link-custom{
-    color: black;
-}
-.logo-title{
-    font-style: italic;
-}
-.navbar-brand{
-    font-size: 20px;
+nav{
+    background-color:black;
+    color:#fff;
 }
 .btn-default{
     background: cornflowerblue !important;
@@ -99,10 +91,5 @@
     font-family: 'Gabriela', serif;
 }
 
-.banner-post-banner{
-    background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height: 70vh;
-}
+
+
