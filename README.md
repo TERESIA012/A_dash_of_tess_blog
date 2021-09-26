@@ -33,6 +33,8 @@
 So far so good there are no bugs related to this project     
 
 ### LICENCE
+
+[MIT](https://github.com/TERESIA012/A_dash_of_tess_blog/blob/master/LICENCE)
 ____
 
 ## Screenshots
