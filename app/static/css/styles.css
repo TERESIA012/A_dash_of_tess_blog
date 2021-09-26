@@ -11,25 +11,25 @@ nav{
     border-radius: 50%;
 }
 
-#home-banner{
+/* #home-banner{
     background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     height: 70vh;
-}
+} */
 
 .banner-content{
     text-align: center;
     padding-top: 10%;
 }
 
-.footer{
+/* .footer{
     background: darkgrey;
     text-align: center;
     height: auto;
     padding: 15px;
-}
+} */
 
 .social-icons {
     padding-top: 20px;
