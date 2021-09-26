@@ -108,7 +108,7 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
 
-    # flash('Your post has been deleted', 'successfully')
+    flash('Your post has been deleted', 'successfully')
     return redirect(url_for('main.all'))
 
 
@@ -148,7 +148,7 @@ def subscriber():
     if subscriber_form.validate_on_submit():
         new_subscriber = Subscriber( email=subscriber_form.email.data)
         new_subscriber.save_subscriber()
-        flash('Email submitted successfully', 'success')
+        flash('Email has been submitted successfully', 'success')
 
     return render_template('subscribe.html', subscriber_form=subscriber_form)
 
