@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for, abort, flash
 from . import main
 from flask_login import login_required, current_user
-from ..models import User, Post, Comment
+from ..models import User, Post, Comment,Subscriber
 from .forms import UpdateProfile, PostForm, CommentForm
 from .. import db, photos
 from ..requests import get_quotes
@@ -140,3 +140,16 @@ def comment(id):
         new_comment.save_comment()
 
     return render_template('view.html', comment_form=comment_form)
+
+
+@main.route('/subscribe', methods=['GET', 'POST'])
+def subscribe():
+    """
+         subscribe function that subscribes the user to the post
+    """
+    email = request.args.get('email')
+    new_subscriber = Subscriber(email=email)
+    db.session.add(new_subscriber)
+    db.session.commit()
+    flash('Email submitted successfully', 'success')
+    return redirect(url_for('main.index'))
