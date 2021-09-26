@@ -8,13 +8,13 @@ class UserModelTest(unittest.TestCase):
         '''
         testcase  to create an instance of User class.
         '''
-        self.new_user = User(password = 'banana')
+        self.new_user = User(password = 'gaidi')
 
 
     def test_password_setter(self):
         
         '''
-        testcase to  ascertain that when password is being hashed and the pass_secure contains a value.
+        testcase to  check password is being hashed and the pass_secure 
         
         '''
         self.assertTrue(self.new_user.password is not None)
@@ -24,7 +24,7 @@ class UserModelTest(unittest.TestCase):
     def test_no_access_password(self):
           
                 '''
-                testcase to comfirm the application raises Attribute error when a user tries to access the password property.
+                testcase to comfirm the application raises Attribute error 
                 '''
                 with self.assertRaises(AttributeError):
                      self.new_user.password
@@ -33,6 +33,6 @@ class UserModelTest(unittest.TestCase):
     def test_password_verification(self):
 
         '''
-        testcase to comfirm that password_hash can be verified when a user passes in the correct password.
+        testcase to confirm that password_hash can be verified when a user uses correct password
         '''
-        self.assertTrue(self.new_user.password('banana'))    
+        self.assertTrue(self.new_user.password('gaidi'))    
