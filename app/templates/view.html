@@ -13,7 +13,7 @@
                 <p class="date text-muted">Posted on ~ {{post.date.strftime('%Y-%m-%d')}}</p>
                 <hr>
                 {% if post.author == current_user %}
-                <a href="{{ url_for('main.delete', id=post.id) }}" class="btn  btn-sm btn-danger"><i class="fa fa-trash"></i> delete</a>
+                <a href="{{ url_for('main.delete', id=post.id) }}" class="btn  btn-sm btn-danger"><i class="fa fa-trash"></i> Delete</a>
                 <a href="{{ url_for('main.update_post', id=post.id) }}" class="btn btn-sm btn-success"><i class="fa fa-check"></i> Update</a>
                 {% endif %}
             </div>
