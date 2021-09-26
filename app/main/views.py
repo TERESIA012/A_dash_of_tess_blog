@@ -108,7 +108,7 @@ def delete(id):
     db.session.delete(post)
     db.session.commit()
 
-    flash('Your post has been deleted', 'successfully')
+    # flash('Your post has been deleted', 'successfully')
     return redirect(url_for('main.all'))
 
 
@@ -140,6 +140,16 @@ def comment(id):
         new_comment.save_comment()
 
     return render_template('view.html', comment_form=comment_form)
+
+
+@main.route('/comment/delete/<comment_id>', methods = ['Post','GET'])
+@login_required
+def delete_comment(comment_id):
+    comments = Comment.query.get(comment_id)
+    db.session.delete(comments)
+    db.session.commit()
+    flash("You have deleted your comment succesfully!")
+    return redirect(url_for('main.index'))
 
 @main.route('/subscriber', methods=['GET', 'POST'])
 @login_required
